@@ -81,9 +81,11 @@ bang.addEventListener("click", () => {
             }
     }
 })
-bang.addEventListener("dblclick", () => {
+
+function xoagiatricu() {
     document.getElementById("displaypheptinh").textContent = "";
-    document.getElementById("displayinput2").textContent = "";
-    document.getElementById("displayinput1").textContent = "";
-    document.getElementById("ketqua").textContent = ""
-})
+    document.getElementById("ketqua").textContent = "";
+}
+
+input1.addEventListener("input", xoagiatricu);
+input2.addEventListener("input", xoagiatricu);
