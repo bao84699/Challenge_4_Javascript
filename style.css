@@ -31,8 +31,13 @@ body {
         font-size: 28px;
         font-weight: 800;
         letter-spacing: 5px;
-        flex-wrap: wrap;
         text-align: center;
+        gap: 10px;
+    /* Giữ nguyên mấy cái cũ của bạn, chỉ thêm/sửa phần này */
+        overflow-x: auto;    /* Chỉ hiện scroll khi tràn ngang */
+        overflow-y: hidden;  /* Ẩn tràn dọc */  /* Quan trọng: không cho wrap */
+}
+
     }
     .frame1 {
         display: flex;
@@ -117,3 +122,4 @@ p
         font-size: 16px;
     }
 }
+#displayinput1, di

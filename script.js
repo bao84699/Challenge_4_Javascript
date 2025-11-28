@@ -18,18 +18,22 @@ input2.addEventListener("input", () => {
 cong.addEventListener("click", () => {
     pheptoan = "+";
     document.getElementById("displaypheptinh").textContent = " + ";
+    document.getElementById("ketqua").textContent = "";
 })
 tru.addEventListener("click", () => {
     pheptoan = "-";
     document.getElementById("displaypheptinh").textContent = " - ";
+    document.getElementById("ketqua").textContent = "";
 })
 nhan.addEventListener("click", () => {
     pheptoan = "x";
     document.getElementById("displaypheptinh").textContent = " x ";
+    document.getElementById("ketqua").textContent = "";
 })
 chia.addEventListener("click", () => {
     pheptoan = "/";
     document.getElementById("displaypheptinh").textContent = " / ";
+    document.getElementById("ketqua").textContent = "";
 })
 
 bang.addEventListener("click", () => {
@@ -79,7 +83,14 @@ bang.addEventListener("click", () => {
                 }
                 document.getElementById("ketqua").textContent = " =" + ketqua;
             }
+            break;
+        default:
+            document.getElementById("ketqua").textContent = "Vui long chon phep tinh !";
+            document.getElementById("displaypheptinh").textContent = "";
+            document.getElementById("displayinput2").textContent = "";
+            document.getElementById("displayinput1").textContent = "";
     }
+    pheptoan = "";
 })
 
 function xoagiatricu() {
