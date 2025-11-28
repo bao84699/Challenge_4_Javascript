@@ -8,11 +8,11 @@ const bang = document.getElementById("bang");
 let pheptoan;
 
 input1.addEventListener("input", () => {
-    const giatri1 = input1.value;
+    let giatri1 = input1.value;
     document.getElementById("displayinput1").textContent = giatri1;
 })
 input2.addEventListener("input", () => {
-    const giatri2 = input2.value;
+    let giatri2 = input2.value;
     document.getElementById("displayinput2").textContent = giatri2;
 })
 cong.addEventListener("click", () => {
@@ -37,13 +37,18 @@ chia.addEventListener("click", () => {
 })
 
 bang.addEventListener("click", () => {
-    const so1 = parseFloat(input1.value);
-    const so2 = parseFloat(input2.value);
+    let so1 = parseFloat(input1.value);
+    let so2 = parseFloat(input2.value);
     if (isNaN(so1) || isNaN(parseFloat(so2))){
         document.getElementById("displaypheptinh").textContent = "";
         document.getElementById("displayinput2").textContent = "";
         document.getElementById("displayinput1").textContent = "";
         document.getElementById("ketqua").textContent = "Thieu gia tri !"
+        input1.value = ""; 
+        input2.value = "";
+        so1 = "null";
+        so2 = "null"; 
+        pheptoan = null;  
         return;
     }
     let ketqua;
@@ -75,6 +80,10 @@ bang.addEventListener("click", () => {
                 document.getElementById("displayinput2").textContent = "";
                 document.getElementById("displayinput1").textContent = "";
                 document.getElementById("ketqua").textContent = "Khong chia cho 0 !"
+                input1.value = ""; 
+                input2.value = "";
+                pheptoan = null;  
+            return;
             }
             else {
                 ketqua = so1 / so2;
@@ -83,15 +92,23 @@ bang.addEventListener("click", () => {
                 }
                 document.getElementById("ketqua").textContent = " =" + ketqua;
             }
+            so1 = "";
+            so2 = ""; 
+            ketqua = null;
             break;
         default:
             document.getElementById("ketqua").textContent = "Vui long chon phep tinh !";
             document.getElementById("displaypheptinh").textContent = "";
             document.getElementById("displayinput2").textContent = "";
             document.getElementById("displayinput1").textContent = "";
+            input1.value = ""; 
+            input2.value = "";
+            pheptoan = null;  
     }
-    pheptoan = "";
+    pheptoan = null;   
 })
+
+
 
 function xoagiatricu() {
     document.getElementById("displaypheptinh").textContent = "";
