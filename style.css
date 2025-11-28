@@ -19,6 +19,7 @@ body {
     gap: 30px;
     align-items: center;
     .screen {
+        padding: 10px;
         margin-top: 44px;
         box-shadow: 6px 6px 15px 0px #88A5BF94 inset ,-10px -10px 16px 0px #ffffff inset;
         background: #EFF7FF;
